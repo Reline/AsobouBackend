@@ -26,7 +26,7 @@
 		// check if the record already exists
 		if(mysql_num_rows($get_score_response) != 0) {
 			// update if it does
-			$edit_score_query = "UPDATE Score SET Score = '" . $safe_score . "', ArchivedDate = '" . $safe_date . "' WHERE SongID = '" . $safe_song_id . "'AND PlayerDigitsID = '" . $safe_player_digits_id . "'";
+			$edit_score_query = "UPDATE Score SET Score = '" . $safe_score . "', ArchivedDate = '" . $safe_date . "' WHERE SongID = " . $safe_song_id . "AND PlayerDigitsID = " . $safe_player_digits_id;
 			$edit_score_response = mysqli_query($mysqli, $edit_score_query) or die(mysqli_error($mysqli));
 
 			mysqli_free_result($edit_score_response);			

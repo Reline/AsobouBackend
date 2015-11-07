@@ -10,7 +10,7 @@
 	
 	if ($safe_song_id == "*") {
 		// get all scores for user
-		$get_all_scores_query = "SELECT * FROM Score WHERE PlayerDigitsID = '" . $safe_player_digits_id . "'";
+		$get_all_scores_query = "SELECT * FROM Score WHERE PlayerDigitsID = " . $safe_player_digits_id;
 		$get_all_scores_response = mysqli_query($mysqli, $get_all_scores_query) or die(mysqli_error($mysqli));
 	
 		// json array
@@ -27,7 +27,7 @@
 		echo $scoreinfo;
 	} else {
 		// get specified score for user
-		$get_score_query = "SELECT * FROM Score WHERE PlayerDigitsID = '" . $safe_player_digits_id . "' AND SongID = '" . $safe_song_id . "'";
+		$get_score_query = "SELECT * FROM Score WHERE PlayerDigitsID = " . $safe_player_digits_id . " AND SongID = " . $safe_song_id;
 		$get_score_response = mysqli_query($mysqli, $get_score_query) or die (mysqli_error($mysqli));
 
 		$scoredata = "";

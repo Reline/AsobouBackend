@@ -25,7 +25,7 @@ include 'common.php';
         // check if record exists
         if(mysql_num_rows($get_digits_id_response) != 0) {
             // update
-            $edit_player_query = "UPDATE Player SET UserName = '" . $safe_username . "', PhoneNumber = '" . $safe_phone_number . "' WHERE DigitsID = '" . $safe_digitsID . "'";
+            $edit_player_query = "UPDATE Player SET UserName = '" . $safe_username . "', PhoneNumber = '" . $safe_phone_number . "' WHERE DigitsID = " . $safe_digitsID;
             $edit_player_response = mysqli_query($mysqli, $edit_player_query) or die(mysqli_error($mysqli));
 
             mysqli_free_result($edit_player_response);

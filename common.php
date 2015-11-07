@@ -2,12 +2,12 @@
 
 //for database
 define("DB_HOST", "localhost");
-define("DB_NAME", "asobu");
+define("DB_NAME", "asobouyo");
 define("DB_USER", "root");
 define("DB_PASS", "");
 
 
-function doDB() {
+function connectToDB() {
     global $mysqli;
     
     //connect to server and select database;

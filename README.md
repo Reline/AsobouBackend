@@ -1,2 +1,2 @@
-# AsobouBackend
-Backend for Asobou! Android application
+# AsobouyoBackend
+Backend for Asobouyo! Android application

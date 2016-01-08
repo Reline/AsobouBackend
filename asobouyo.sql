@@ -27,7 +27,7 @@ CREATE TABLE `Lyrics` (
   `Format` enum('roomaji','kana','kanji') DEFAULT NULL,
   `FileLocation` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `Lyrics` (
 
 LOCK TABLES `Lyrics` WRITE;
 /*!40000 ALTER TABLE `Lyrics` DISABLE KEYS */;
+INSERT INTO `Lyrics` VALUES (2,NULL,'pwd');
 /*!40000 ALTER TABLE `Lyrics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +54,7 @@ CREATE TABLE `Player` (
   `DigitsID` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `DigitsIDIndex` (`DigitsID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,6 +63,7 @@ CREATE TABLE `Player` (
 
 LOCK TABLES `Player` WRITE;
 /*!40000 ALTER TABLE `Player` DISABLE KEYS */;
+INSERT INTO `Player` VALUES (8,'Username','12535145899','3271374978');
 /*!40000 ALTER TABLE `Player` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,12 +111,12 @@ CREATE TABLE `Song` (
   `Album` varchar(255) DEFAULT NULL,
   `Genre` varchar(255) DEFAULT NULL,
   `Length` time NOT NULL,
-  `Difficult` enum('slow','medium','fast') DEFAULT NULL,
+  `Difficulty` enum('slow','medium','fast') DEFAULT NULL,
   `LyricsID` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `LyricsID` (`LyricsID`),
   CONSTRAINT `Song_ibfk_1` FOREIGN KEY (`LyricsID`) REFERENCES `Lyrics` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,6 +125,7 @@ CREATE TABLE `Song` (
 
 LOCK TABLES `Song` WRITE;
 /*!40000 ALTER TABLE `Song` DISABLE KEYS */;
+INSERT INTO `Song` VALUES (4,'yasashiihito',NULL,NULL,NULL,'00:01:00','slow',2);
 /*!40000 ALTER TABLE `Song` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -135,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-07 13:14:10
+-- Dump completed on 2016-01-07 19:06:17
